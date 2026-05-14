@@ -87,14 +87,14 @@ db.serialize(() => {
   // Insertar usuarios
   const hash1 = bcrypt.hashSync('erik123', 10);
   const hash2 = bcrypt.hashSync('jess123', 10);
-  const hashAdmin = bcrypt.hashSync('admin123', 10);
+  const hashAdmin = bcrypt.hashSync('Affinity2026!', 10);
 
   db.run(`INSERT OR IGNORE INTO usuarios (id, nombre, email, password, marca, rol) VALUES 
     (1, 'SUYO', 'suyo@cursos.com', ?, 'SUYO Studio', 'usuario')`, [hash1]);
   db.run(`INSERT OR IGNORE INTO usuarios (id, nombre, email, password, marca, rol) VALUES 
     (2, 'AM BESTEN', 'ambesten@cursos.com', ?, 'AM BESTEN', 'usuario')`, [hash2]);
   db.run(`INSERT OR IGNORE INTO usuarios (id, nombre, email, password, marca, rol) VALUES 
-    (3, 'ADMIN', 'admin@cursos.com', ?, 'Administrador', 'admin')`, [hashAdmin]);
+    (3, 'admin', 'admin@cursos.com', ?, 'Administrador', 'admin')`, [hashAdmin]);
 
   // Accesos
   db.run(`INSERT OR IGNORE INTO accesos_cursos (usuario_id, curso_id, bloqueado) VALUES 
